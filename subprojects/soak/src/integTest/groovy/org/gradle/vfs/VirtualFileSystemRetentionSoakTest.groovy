@@ -79,7 +79,7 @@ class VirtualFileSystemRetentionSoakTest extends DaemonIntegrationSpec {
             daemons.daemon.logFile == daemon.logFile
             daemon.assertIdle()
             assertWatchingSucceeded()
-            assert receivedFileSystemEvents > 5000
+            assert receivedFileSystemEvents >= 5000
         }
         then:
         assertWatchingSucceeded()
